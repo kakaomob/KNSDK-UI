@@ -3,7 +3,7 @@
 import PackageDescription
 
 let sdkName = "KNSDK"
-let version = "1.9.8"
+let version = "1.9.9"
 
 let package = Package(
     name: sdkName,
@@ -25,8 +25,8 @@ let package = Package(
 func getRealmFromNexus() -> [Target] {
     let targets: [Target]  = [
         .binaryTarget(name: sdkName,
-                      url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/1.9.8/KNSDK-UI/KNSDK.xcframework.zip",
-                      checksum: "19c68489edb0cfc0de610abf108a5bb7eac8a79987160b429f60e7adcb610189"),
+                      url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/1.9.9/KNSDK-UI/KNSDK.xcframework.zip",
+                      checksum: "526c6057f0b58ee2b334be78fe6c1785c3327f2840f4bdbf053331913ad5557c"),
         .target(name: "KNSDKBundle",
                 dependencies: [
                     .target(name: sdkName),
