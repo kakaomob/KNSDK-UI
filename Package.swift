@@ -17,7 +17,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/kakaomob/KMLocationSDK.git", exact: Version(stringLiteral: "1.105.9")),
-        .package(url: "https://github.com/RNCryptor/RNCryptor.git", .upToNextMajor(from: "5.0.0")),
     ],
     targets: getRealmFromNexus(),
     swiftLanguageVersions: [.v5]
@@ -32,7 +31,6 @@ func getRealmFromNexus() -> [Target] {
                 dependencies: [
                     .target(name: sdkName),
                     .product(name: "KMLocationSDK", package: "KMLocationSDK"),
-                    .product(name: "RNCryptor", package: "RNCryptor"),
                     .target(name: "Realm"),
                     .target(name: "RealmSwift")
                 ],
