@@ -48,7 +48,7 @@ func getRealmFromNexus() -> [Target] {
                       checksum: "2d247238aea74dd56b5703f790527a23b0adaa0b7a22def4a86ab0cac8f38f06"),
         .binaryTarget(name: "RealmSwift",
                       url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/Realm/10.54.6/26.0.1/RealmSwift.xcframework.zip",
-                      checksum: "7bc9e9ee16a457c49c4f772ceafd4435a73fc15799eb67311d2eb5bcdc2518c3"),
+                      checksum: "ba5e0a74bf6fc64097b769df9f19a36b2b6434059324c5ff9037411ca0782576"),
         .binaryTarget(name: "KNSDKCore",
                       url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/KNSDKCore/1.0.0/KNSDKCore.xcframework.zip",
                       checksum: "6f6d43d72a8ab58c216389b9f00176250d420806539e7d45ed8f3dd29959f522"),
