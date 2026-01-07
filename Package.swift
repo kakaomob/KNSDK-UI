@@ -3,7 +3,7 @@
 import PackageDescription
 
 let sdkName = "KNSDK"
-let version = "1.10.13"
+let version = "1.12.14"
 
 let package = Package(
     name: sdkName,
@@ -16,7 +16,7 @@ let package = Package(
             targets: ["KNSDKBundle"])
     ],
     dependencies: [
-        .package(url: "https://github.com/kakaomob/KMLocationSDK.git", exact: Version(stringLiteral: "1.103.82")),
+        .package(url: "https://github.com/kakaomob/KMLocationSDK.git", exact: Version(stringLiteral: "1.105.9")),
     ],
     targets: getRealmFromNexus(),
     swiftLanguageVersions: [.v5]
@@ -25,14 +25,14 @@ let package = Package(
 func getRealmFromNexus() -> [Target] {
     let targets: [Target]  = [
         .binaryTarget(name: sdkName,
-                      url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/1.10.13/KNSDK-UI/KNSDK.xcframework.zip",
-                      checksum: "f8295d3161abf15f93d674456465597cf6452cdd34971cdc7e4a7c68d5d5f77a"),
+                      url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/1.12.13/KNSDK-UI/KNSDK.xcframework.zip",
+                      checksum: "494cf3a94606785786474c9927be7d195cf6cf2cc8c665615fd9ca70cafb3846"),
         .target(name: "KNSDKBundle",
                 dependencies: [
                     .target(name: sdkName),
                     .product(name: "KMLocationSDK", package: "KMLocationSDK"),
                     .target(name: "Realm"),
-                    .target(name: "RealmSwift")
+                    .target(name: "RealmSwift"),
                 ],
                 resources: [
                     .process("PrivacyInfo.xcprivacy")
@@ -49,7 +49,7 @@ func getRealmFromNexus() -> [Target] {
         .binaryTarget(name: "RealmSwift",
                       url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/Realm/10.54.6/26.0.1/RealmSwift.xcframework.zip",
                       checksum: "ba5e0a74bf6fc64097b769df9f19a36b2b6434059324c5ff9037411ca0782576"),
-        ]
+    ]
     #elseif compiler(>=6.1.2)
     // 16.4
     return targets + [
@@ -80,7 +80,7 @@ func getRealmFromNexus() -> [Target] {
         .binaryTarget(name: "RealmSwift",
                       url: "https://devrepo.kakaomobility.com/repository/kakao-mobility-ios-knsdk-release/Realm/10.54.5/16.2/RealmSwift.xcframework.zip",
                       checksum: "2d03d25c8b52914a3c3bbc64184b66b8ce3d93f7a7c4b0ef0af300805827ce61"),
-            ]
+        ]
     #elseif compiler(>=5.10.0)
     // 15.4
     return targets + [
